@@ -10,4 +10,3 @@ class BirthdayForm(forms.Form):
         label='Дата рождения',
         widget=forms.DateInput(attrs={'type': 'date'}),
     )
- 

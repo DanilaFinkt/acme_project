@@ -9,19 +9,21 @@ from .models import Birthday
 from .utils import calculate_birthday_countdown
 
 
-# Создаём миксин.
-class BirthdayMixin:
-    model = Birthday
-    success_url = reverse_lazy('birthday:list')
+# # Создаём миксин.
+# class BirthdayMixin:
+#     model = Birthday
+#     success_url = reverse_lazy('birthday:list')
 
 
 # Добавляем миксин первым по списку родительских классов.
-class BirthdayCreateView(BirthdayMixin, CreateView):
+class BirthdayCreateView(CreateView):
+    model = Birthday
     # Не нужно описывать атрибуты: все они унаследованы от BirthdayMixin.
     form_class = BirthdayForm
 
 
-class BirthdayUpdateView(BirthdayMixin, UpdateView):
+class BirthdayUpdateView(UpdateView):
+    model = Birthday
     # И здесь все атрибуты наследуются от BirthdayMixin.
     form_class = BirthdayForm
 
@@ -95,8 +97,9 @@ class BirthdayListView(ListView):
 #     return render(request, 'birthday/birthday_list.html', context)
 
 
-class BirthdayDeleteView(BirthdayMixin, DeleteView):
-    pass
+class BirthdayDeleteView(DeleteView):
+    model = Birthday
+    success_url = reverse_lazy('birthday:list')
 
 
 # def delete_birthday(request, pk):

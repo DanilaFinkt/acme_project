@@ -19,3 +19,7 @@ class Birthday(models.Model):
             ),
         )
         verbose_name = 'День рождения'
+
+        def get_absolute_url(self):
+            # С помощью функции reverse() возвращаем URL объекта.
+            return reverse("(birthday:detail)", kwargs={"pk": self.pk})

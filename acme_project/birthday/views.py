@@ -77,7 +77,7 @@ class BirthdayListView(ListView):
     # ...сортировку, которая будет применена при выводе списка объектов:
     ordering = 'id'
     # ...и даже настройки пагинации:
-    paginate_by = 10
+    paginate_by = 4
 
 
 # def birthday_list(request):

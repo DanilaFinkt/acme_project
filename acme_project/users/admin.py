@@ -3,7 +3,7 @@ from django.contrib.auth.admin import UserAdmin
 
 from .models import MyUser
 
-# Добавляем поле с биографией 
+# Добавляем поле с биографией
 # к стандартному набору полей (fieldsets) пользователя в админке.
 UserAdmin.fieldsets += (
     # Добавляем кортеж, где первый элемент — это название раздела в админке,

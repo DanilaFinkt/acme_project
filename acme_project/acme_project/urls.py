@@ -22,4 +22,5 @@ urlpatterns = [
         name='registration',
     ),
 ]
+handler404 = 'core.views.page_not_found'
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
